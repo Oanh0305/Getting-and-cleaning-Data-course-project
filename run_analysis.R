@@ -79,6 +79,7 @@ split <-split(merged_entire_data,merged_entire_data[,c("activity","subject")])
 
 
 
-head(sapply(split,function(x)colMeans(x[,-c(1,2)])))
+output <-sapply(split,function(x)colMeans(x[,-c(1,2)]))
+write.table(output, file = "output.txt", row.names = FALSE)
 
 
